@@ -5,11 +5,35 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 0;
+}
+
+/* html {
+  font-size: 100%;
+} */
+
 html,
 body {
   height: 100%;
   font-family: "Poppins", sans-serif;
 }
+
+/* @media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) {
+  body {
+    font-size: 1.5rem;
+  }
+} */
 
 .header {
   height: 100vh;
@@ -29,13 +53,31 @@ body {
   position: relative;
 }
 
-.navbar ul {
-  height: 100%;
+.navbar-links ul {
+  /* height: 100%; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-btn .bar {
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
 }
 
 li {
@@ -54,18 +96,20 @@ li:hover {
   transition: ease-in-out 0.2s;
   /* border-bottom: 2px solid; */
 }
+
 /* hero styles */
 
 .header-text {
   text-align: center;
   position: relative;
   width: 100%;
-  padding: 8.5rem 5rem;
+  /* padding: 8.5rem 5rem; */
 }
 
 .header h1 {
   font-size: 6rem;
   color: #fff;
+  font-style: italic;
 }
 
 .header h2 {
@@ -81,7 +125,8 @@ h2 {
   margin-bottom: 60px;
 }
 
-.header a {
+.btn,
+.btn-header {
   text-decoration: none;
   color: #fff;
   padding: 1rem 1.875rem;
@@ -100,6 +145,7 @@ h2 {
 
 /* section styles */
 section {
+  display: flex;
   height: 80vh;
   width: 100%;
 }
@@ -107,7 +153,40 @@ section {
 /* individual section styles */
 .section-1 {
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
+
+.unit {
+  width: 20rem;
+  padding: 0px 15px;
+}
+
+.unit h2 {
+  text-align: center;
+  font-size: 37px;
+}
+
+.flex-img {
+  height: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* .section-1 .unit-1 {
+  
+  background-color: green;
+}
+
+.section-1 .unit-2 {
+  align-items: center;
+  background-color: teal;
+}
+
+.section-1 .unit-3 {
+  background-color: palevioletred;
+} */
 
 .section-2 {
   background-color: #dcc7be;
@@ -117,7 +196,67 @@ section {
   background-color: #aa968a;
 }
 
-/* @media (max-width: 991.98px)
-.wrapper {
-    padding-top: 74px;
-} */
+@media (max-width: 1013.98px) {
+  .header-text {
+    padding: 5.5rem 5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .header h2 {
+    font-size: 2rem;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .toggle-btn {
+    display: flex;
+  }
+
+  .unit {
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .section {
+    width: 100%;
+    height: 175vh;
+    display: block;
+  }
+
+  .section-1 {
+    display: block;
+  }
+}
